@@ -253,7 +253,7 @@ function startCountdown() {
 
     const birthday =
          new Date(
-            Date.now() + 30 * 1000
+            Date.now() + 5 * 1000
         );
        
 
