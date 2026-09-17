@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29296b,
+            #08081c
+        );
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+
+.final-page {
+
+    width: min(90%, 650px);
+
+    animation: reveal 1.5s ease forwards;
+}
+
+
+.small-line {
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 25px rgba(255, 150, 180, 0.5);
+}
+
+
+.intro {
+
+    font-size: 18px;
+
+    opacity: 0.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-box {
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.letter-box p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+
+    margin-bottom: 20px;
+}
+
+
+.letter-box p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.highlight {
+
+    color: #ffd1df;
+
+    text-shadow:
+        0 0 15px rgba(255, 150, 180, 0.5);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#nextBtn {
+
+    margin-top: 30px;
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: pink;
+
+    color: #4a234f;
+
+    font-family: Georgia, serif;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#nextBtn:hover {
+
+    transform: scale(1.08);
+
+    background: #ffb6d5;
+
+    box-shadow:
+        0 0 25px rgba(255, 170, 200, 0.5);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .letter-box {
+        padding: 22px 18px;
+    }
+
+    .letter-box p {
+        font-size: 16px;
+    }
+}

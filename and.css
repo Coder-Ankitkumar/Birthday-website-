@@ -1,0 +1,1413 @@
+/* =========================================================
+   AND THEN... US — CINEMATIC MEMORY PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #30245f 0%,
+            #121027 35%,
+            #070712 75%
+        );
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.bg-glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.glow-1 {
+    top: 10%;
+    left: -250px;
+
+    background: #ff8fb8;
+}
+
+.glow-2 {
+    top: 55%;
+    right: -250px;
+
+    background: #7772ff;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.eyebrow,
+.memory-label {
+    color: #ffc9dc;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.75;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+
+    position: relative;
+}
+
+
+.hero .eyebrow {
+    margin-bottom: 28px;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 105px);
+
+    font-weight: normal;
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 40px rgba(255,170,205,0.25);
+
+    animation:
+        titleReveal 1.4s ease forwards;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: #ffb6d5;
+
+    font-style: italic;
+
+    margin-top: 12px;
+}
+
+
+.hero-text {
+    max-width: 600px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    opacity: 0.82;
+
+    animation:
+        fadeUp 1.2s ease 0.4s both;
+}
+
+
+.hero-small {
+    margin-top: 10px;
+
+    color: #ffc7da;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    animation:
+        fadeUp 1.2s ease 0.7s both;
+}
+
+
+.scroll-line {
+    position: absolute;
+
+    bottom: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.45;
+
+    text-transform: uppercase;
+}
+
+
+.scroll-line span {
+    width: 1px;
+
+    height: 55px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #ffd6e5
+        );
+
+    animation: scrollPulse 2s infinite;
+}
+
+
+/* =========================================================
+   MEMORY INTRO
+========================================================= */
+
+.memory-intro {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 130px 25px 90px;
+
+    text-align: center;
+}
+
+
+.memory-intro .eyebrow {
+    margin-bottom: 25px;
+}
+
+
+.memory-intro h2 {
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+
+.memory-intro h2 span {
+    color: #ffb6d5;
+
+    font-style: italic;
+}
+
+
+.memory-intro > p:last-child {
+    opacity: 0.6;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MEMORY STORY
+========================================================= */
+
+.memory-story {
+    width: min(1100px, 90%);
+
+    margin: 100px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+.left-story {
+    justify-content: flex-start;
+}
+
+
+.right-story {
+    justify-content: flex-end;
+}
+
+
+.memory-photo {
+    position: relative;
+
+    flex-shrink: 0;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.16);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+
+.right-story .memory-photo {
+    transform: rotate(2deg);
+}
+
+
+.memory-photo:hover {
+    transform:
+        rotate(0deg)
+        scale(1.03);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.55);
+}
+
+
+.photo-large {
+    width: min(470px, 45vw);
+}
+
+
+.photo-tall {
+    width: min(400px, 42vw);
+}
+
+
+.memory-photo img {
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 4px;
+
+    transition: transform 0.8s ease;
+}
+
+
+.photo-tall img {
+    height: 560px;
+}
+
+
+.memory-photo:hover img {
+    transform: scale(1.04);
+}
+
+
+.photo-number {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    z-index: 3;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(10,8,25,0.65);
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+
+    backdrop-filter: blur(10px);
+
+    color: #ffd4e3;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MEMORY CONTENT
+========================================================= */
+
+.memory-content {
+    max-width: 430px;
+}
+
+
+.memory-content .memory-label {
+    margin-bottom: 22px;
+}
+
+
+.memory-content h2 {
+    font-size: clamp(32px, 4vw, 50px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+
+.tiny-line {
+    width: 55px;
+
+    height: 1px;
+
+    background: #ffb6d5;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 12px rgba(255,170,200,0.7);
+}
+
+
+.memory-content p {
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    margin-bottom: 15px;
+}
+
+
+.memory-content .highlight {
+    color: #ffc5d8;
+
+    font-style: italic;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   CENTER MEMORY
+========================================================= */
+
+.center-memory {
+    width: min(850px, 90%);
+
+    margin: 180px auto;
+
+    text-align: center;
+}
+
+
+.center-memory .memory-label {
+    margin-bottom: 30px;
+}
+
+
+.center-photo {
+    position: relative;
+
+    width: min(700px, 90vw);
+
+    height: min(650px, 70vw);
+
+    min-height: 400px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,0.55);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+}
+
+
+.center-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 1s ease;
+}
+
+
+.center-photo:hover img {
+    transform: scale(1.05);
+}
+
+
+.center-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 45%,
+            rgba(5,4,15,0.5)
+        );
+}
+
+
+.center-overlay span {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    background:
+        rgba(10,8,25,0.4);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffd5e4;
+
+    font-size: 15px;
+}
+
+
+.center-memory h2 {
+    font-size: clamp(30px, 5vw, 52px);
+
+    font-weight: normal;
+
+    margin-top: 40px;
+
+    line-height: 1.2;
+}
+
+
+.center-memory > p:last-child {
+    max-width: 550px;
+
+    margin: 20px auto 0;
+
+    line-height: 1.8;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   LAST MEMORY
+========================================================= */
+
+.last-memory {
+    width: min(1050px, 90%);
+
+    margin: 170px auto;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.last-photo {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    transform: rotate(-1.5deg);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.5);
+}
+
+
+.last-photo img {
+    width: 100%;
+
+    height: 560px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.last-number {
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(10,8,25,0.7);
+
+    backdrop-filter: blur(10px);
+
+    color: #ffd3e3;
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+}
+
+
+.last-text {
+    padding-right: 20px;
+}
+
+
+.last-text .memory-label {
+    margin-bottom: 20px;
+}
+
+
+.last-text h2 {
+    font-size: clamp(35px, 5vw, 58px);
+
+    font-weight: normal;
+
+    line-height: 1.12;
+
+    margin-bottom: 25px;
+}
+
+
+.last-text p {
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.last-text .highlight {
+    color: #ffc3d7;
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CONVERSATION
+========================================================= */
+
+.conversation {
+    width: min(700px, 90%);
+
+    margin: 180px auto;
+
+    text-align: center;
+}
+
+
+.conversation .eyebrow {
+    margin-bottom: 25px;
+}
+
+
+.conversation > h2 {
+    font-size: clamp(34px, 5vw, 52px);
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    margin-bottom: 70px;
+}
+
+
+.chat-box {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.chat {
+    max-width: 72%;
+
+    padding: 18px 23px;
+
+    border-radius: 22px;
+
+    text-align: left;
+
+    background:
+        rgba(255,255,255,0.065);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.2);
+
+    animation: chatFloat 5s ease-in-out infinite;
+}
+
+
+.chat.right {
+    align-self: flex-end;
+
+    text-align: right;
+
+    background:
+        rgba(255,170,200,0.09);
+}
+
+
+.chat span {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #ffb9d3;
+}
+
+
+.chat p {
+    margin-top: 8px;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   EMOTIONAL REVEAL
+========================================================= */
+
+.reveal {
+    min-height: 70vh;
+
+    width: min(850px, 90%);
+
+    margin: 100px auto 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.reveal > p {
+    font-size: 17px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+.reveal h2 {
+    max-width: 750px;
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+
+.reveal h2 span {
+    color: #ffb6d5;
+
+    font-style: italic;
+}
+
+
+.reveal-line {
+    width: 80px;
+
+    height: 1px;
+
+    background: #ffb6d5;
+
+    margin: 45px 0;
+
+    box-shadow:
+        0 0 15px rgba(255,160,200,0.8);
+}
+
+
+.reveal strong {
+    color: #ffd0df;
+
+    font-size: 22px;
+
+    font-weight: normal;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-section {
+    width: min(650px, 90%);
+
+    margin: 100px auto 180px;
+
+    text-align: center;
+}
+
+
+.music-section .eyebrow {
+    margin-bottom: 22px;
+}
+
+
+.music-section > h2 {
+    font-size: clamp(35px, 5vw, 52px);
+
+    font-weight: normal;
+
+    margin-bottom: 45px;
+}
+
+
+.music-section > h2 span {
+    color: #ffb6d5;
+
+    font-style: italic;
+}
+
+
+.music-player {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.1),
+            rgba(255,255,255,0.035)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.17);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.35);
+
+    text-align: left;
+}
+
+
+.album {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6d5,
+            #8178d5
+        );
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 30px rgba(255,160,200,0.25);
+}
+
+
+.song-info {
+    flex: 1;
+}
+
+
+.song-info p {
+    color: #ffb9d3;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+
+.song-info h3 {
+    font-size: 18px;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+
+.song-info small {
+    font-size: 11px;
+
+    opacity: 0.5;
+}
+
+
+#playBtn {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffd0df;
+
+    color: #512546;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+
+#playBtn:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 30px rgba(255,170,200,0.55);
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.ending {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+}
+
+
+.ending-heart {
+    font-size: 55px;
+
+    margin-bottom: 35px;
+
+    animation:
+        heartbeat 1.6s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(255,150,190,0.7)
+        );
+}
+
+
+.ending p {
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+}
+
+
+.ending h2 {
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    margin-bottom: 45px;
+}
+
+
+.ending h2 span {
+    color: #ffb6d5;
+
+    font-style: italic;
+}
+
+
+.next-btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: #ffd0df;
+
+    color: #4a234f;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 10px 30px rgba(255,150,190,0.15);
+}
+
+
+.next-btn:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 40px rgba(255,150,190,0.35);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.92)
+            translateY(20px);
+
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+
+        transform:
+            scaleY(0.7);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.16);
+    }
+}
+
+
+@keyframes chatFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 92vh;
+
+        padding:
+            80px 20px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+
+    .memory-intro {
+        padding-top: 90px;
+    }
+
+
+    .memory-story {
+        width: 90%;
+
+        margin: 110px auto;
+
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+
+    .right-story {
+        flex-direction: column-reverse;
+    }
+
+
+    .photo-large,
+    .photo-tall {
+        width: 100%;
+    }
+
+
+    .memory-photo img,
+    .photo-tall img {
+        height: 470px;
+    }
+
+
+    .memory-content {
+        width: 100%;
+
+        max-width: 500px;
+
+        text-align: center;
+    }
+
+
+    .tiny-line {
+        margin:
+            20px auto 25px;
+    }
+
+
+    .center-memory {
+        margin:
+            130px auto;
+    }
+
+
+    .center-photo {
+        width: 100%;
+
+        height: 520px;
+
+        min-height: 0;
+    }
+
+
+    .last-memory {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        margin: 130px auto;
+    }
+
+
+    .last-photo {
+        transform: rotate(0);
+    }
+
+
+    .last-photo img {
+        height: 500px;
+    }
+
+
+    .last-text {
+        text-align: center;
+
+        padding: 0;
+    }
+
+
+    .chat {
+        max-width: 88%;
+    }
+
+
+    .reveal {
+        min-height: 65vh;
+
+        margin:
+            80px auto 130px;
+    }
+
+
+    .music-section {
+        margin:
+            80px auto 130px;
+    }
+
+
+    .ending {
+        min-height: 70vh;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+
+    .memory-photo img,
+    .photo-tall img {
+        height: 400px;
+    }
+
+
+    .center-photo {
+        height: 430px;
+    }
+
+
+    .last-photo img {
+        height: 430px;
+    }
+
+
+    .music-player {
+        padding: 13px;
+
+        gap: 12px;
+    }
+
+
+    .album {
+        width: 55px;
+        height: 55px;
+
+        font-size: 22px;
+    }
+
+
+    #playBtn {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .song-info h3 {
+        font-size: 15px;
+    }
+
+
+    .song-info small {
+        font-size: 9px;
+    }
+
+}

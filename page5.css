@@ -1,0 +1,350 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29296b,
+            #08081c
+        );
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   FINAL CONTAINER
+========================= */
+
+.final-surprise {
+
+    width: min(90%, 650px);
+
+    animation: finalReveal 2s ease forwards;
+}
+
+
+/* =========================
+   SMALL LINE
+========================= */
+
+.small-line {
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    margin-bottom: 20px;
+
+    animation: fadeUp 1.5s ease forwards;
+
+    animation-delay: 0.5s;
+}
+
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+h1 {
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 25px rgba(255, 150, 180, 0.5);
+
+    animation: fadeUp 1.5s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+
+    font-size: 70px;
+
+    margin: 15px 0 30px;
+
+    opacity: 0;
+
+    animation:
+        heartReveal 1.5s ease forwards,
+        heartbeat 1.8s ease-in-out infinite;
+
+    animation-delay: 1.5s, 3s;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(255, 100, 150, 0.7)
+        );
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    opacity: 0;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1.5s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================
+   MAIN LOVE MESSAGE
+========================= */
+
+h2 {
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    line-height: 1.5;
+
+    color: #ffd1df;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 20px rgba(255, 150, 180, 0.5);
+
+    animation: fadeUp 1.5s ease forwards;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-top: 30px;
+
+    opacity: 0;
+
+    animation: fadeUp 1.5s ease forwards;
+
+    animation-delay: 3.2s;
+}
+
+
+.ending span {
+
+    color: #ffc5d8;
+
+    font-size: 22px;
+
+    text-shadow:
+        0 0 15px rgba(255, 150, 180, 0.5);
+}
+
+
+/* =========================
+   PAGE REVEAL
+========================= */
+
+@keyframes finalReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   TEXT ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   HEART REVEAL
+========================= */
+
+@keyframes heartReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.3);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   HEARTBEAT
+========================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 20px;
+    }
+
+    h1 {
+
+        font-size: 36px;
+    }
+
+    .heart {
+
+        font-size: 58px;
+    }
+
+    .final-message {
+
+        font-size: 17px;
+    }
+
+    h2 {
+
+        font-size: 24px;
+    }
+
+    .ending {
+
+        font-size: 16px;
+    }
+
+    .ending span {
+
+        font-size: 19px;
+    }
+}
+
+
+/* =========================
+   BIRTHDAY HEART
+========================= */
+
+#birthdayHeart {
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+#birthdayHeart:hover {
+
+    transform: scale(1.18);
+
+    filter:
+        drop-shadow(
+            0 0 35px rgba(255, 100, 150, 1)
+        );
+}

@@ -1,0 +1,298 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29296b,
+            #08081c
+        );
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
+
+    overflow-x: hidden;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.story-page {
+
+    width: min(90%, 650px);
+
+    margin: auto;
+
+    animation: pageReveal 1.5s ease forwards;
+}
+
+
+/* =========================
+   SMALL LINE
+========================= */
+
+.small-line {
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+h1 {
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 20px rgba(255, 150, 180, 0.5);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    font-size: 18px;
+
+    opacity: 0.8;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   MEMORY CARD
+========================= */
+
+.memory-card {
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+
+.memory-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(255, 150, 180, 0.15);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.memory-number {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #ffc5d8;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CARD HEADING
+========================= */
+
+.memory-card h2 {
+
+    font-size: 27px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.memory-card p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.memory-card .highlight {
+
+    color: #ffd1df;
+
+    font-size: 20px;
+
+    margin-top: 15px;
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 15px rgba(255, 150, 180, 0.5);
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+#nextBtn {
+
+    margin-top: 15px;
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: pink;
+
+    color: #4a234f;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#nextBtn:hover {
+
+    transform: scale(1.08);
+
+    background: #ffb6d5;
+
+    box-shadow:
+        0 0 25px rgba(255, 170, 200, 0.5);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes pageReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 40px 15px;
+    }
+
+    h1 {
+
+        font-size: 36px;
+    }
+
+    .memory-card {
+
+        padding: 25px 20px;
+    }
+
+    .memory-card h2 {
+
+        font-size: 23px;
+    }
+
+    .memory-card p {
+
+        font-size: 16px;
+    }
+}
+
+#beginningCard,
+#gettingCloseCard,
+#andThenCard {
+    cursor: pointer;
+}

@@ -1,0 +1,600 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #353574,
+            #09091f 70%
+        );
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.us-hero {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 80px 25px;
+
+    animation: fadeUp 1.5s ease;
+}
+
+
+.small-line {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #ffd1df;
+
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+}
+
+
+.us-hero h1 {
+
+    font-size: 58px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 30px rgba(255, 170, 200, 0.5);
+}
+
+
+.intro {
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories-section {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 90px 25px;
+}
+
+
+.memories-section h2 {
+
+    font-size: 36px;
+
+    font-weight: normal;
+
+    margin-bottom: 45px;
+
+    text-shadow:
+        0 0 20px rgba(255, 150, 180, 0.4);
+}
+
+
+/* =========================
+   PHOTO GRID
+========================= */
+
+.memory-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+
+.memory-photo {
+
+    padding: 9px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+    transition: 0.5s ease;
+}
+
+
+.memory-photo:hover {
+
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 20px 45px rgba(255, 150, 190, 0.18);
+}
+
+
+.memory-photo img,
+.memory-card video {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 13px;
+}
+
+
+/* =========================
+   CONVERSATION
+========================= */
+
+.conversation-section {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+
+.conversation-section h2 {
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+    margin-bottom: 45px;
+}
+
+
+.chat-message {
+
+    max-width: 75%;
+
+    padding: 18px 22px;
+
+    margin: 20px 0;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    line-height: 1.6;
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+
+.chat-message.left {
+
+    margin-right: auto;
+
+    border-bottom-left-radius: 5px;
+}
+
+
+.chat-message.right {
+
+    margin-left: auto;
+
+    text-align: right;
+
+    background: rgba(255, 170, 200, 0.10);
+
+    border-bottom-right-radius: 5px;
+}
+
+
+.chat-message:hover {
+
+    transform: translateY(-4px);
+}
+
+
+.realization {
+
+    margin-top: 55px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+
+.highlight {
+
+    color: #ffd1df;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 18px rgba(255, 150, 180, 0.45);
+}
+
+
+/* =========================
+   SONG
+========================= */
+
+.song-section {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 80px 25px;
+}
+
+
+.song-section h2 {
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+}
+
+
+.music-player {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+
+    text-align: left;
+}
+
+
+.song-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6d5,
+            #8e82d9
+        );
+
+    font-size: 25px;
+}
+
+
+.song-info {
+
+    flex: 1;
+}
+
+
+.song-info h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+
+.song-info p {
+
+    font-size: 12px;
+
+    opacity: 0.6;
+}
+
+
+#playBtn {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: pink;
+
+    color: #4a234f;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#playBtn:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 22px rgba(255, 170, 200, 0.55);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 120px 25px 160px;
+}
+
+
+.final-message > p {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+
+    margin-bottom: 12px;
+}
+
+
+.final-message .highlight {
+
+    margin-top: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+#continueBtn {
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: pink;
+
+    color: #4a234f;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#continueBtn:hover {
+
+    transform: scale(1.08);
+
+    background: #ffb6d5;
+
+    box-shadow:
+        0 0 25px rgba(255, 170, 200, 0.5);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .us-hero {
+
+        min-height: 65vh;
+
+        padding: 70px 20px;
+    }
+
+
+    .us-hero h1 {
+
+        font-size: 40px;
+    }
+
+
+    .intro {
+
+        font-size: 16px;
+    }
+
+
+    .memory-gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .memory-photo img {
+
+        aspect-ratio: 4 / 3;
+    }
+
+
+    .memories-section h2 {
+
+        font-size: 30px;
+    }
+
+
+    .conversation-section h2 {
+
+        font-size: 28px;
+    }
+
+
+    .chat-message {
+
+        max-width: 90%;
+    }
+
+
+    .realization {
+
+        font-size: 17px;
+    }
+
+
+    .highlight {
+
+        font-size: 19px;
+    }
+
+
+    .song-section h2 {
+
+        font-size: 29px;
+    }
+
+
+    .final-message {
+
+        padding: 100px 20px 130px;
+    }
+
+
+    .final-message > p {
+
+        font-size: 17px;
+    }
+
+}
