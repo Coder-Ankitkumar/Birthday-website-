@@ -252,9 +252,9 @@ function startCountdown() {
 
 
     const birthday =
-        // new Date(
-        //     Date.now() + 5 * 1000
-        // );
+        new Date(
+            Date.now() + 5 * 1000
+        );
         // const birthday = new Date("2026-09-19T00:00:00");
 
 
