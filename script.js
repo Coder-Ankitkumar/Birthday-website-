@@ -33,7 +33,7 @@ unlockBtn.addEventListener("click", function () {
 
     // PASSWORD = 1119
 
-    if (passwordInput.value === "1119") {
+    if (passwordInput.value === "1911") {
 
         error.textContent = "";
 
