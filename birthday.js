@@ -259,7 +259,6 @@ function startCountdown() {
            new Date("2026-09-19T00:00:00");
        
 
-
     function updateCountdown() {
 
         const now =
@@ -801,20 +800,20 @@ const letterContinueBtn =
 
 
 const letterMessage =
-`Hey beautiful,
+`My Love,
 
 Pata nahi ye sab kaise likhun… kyunki jo feel karta hoon, usko words mein exactly bol paana mere liye kabhi easy nahi raha.
 
-Bas itna pata hai ki tum meri life mein ho, aur ye mere liye genuinely special hai.
+Bas itna pata hai ki aap meri life mein ho, aur ye mere liye genuinely special hai.
 
-Tumhare saath judi hui chhoti-chhoti cheezein bhi mere liye important hain. Kabhi koi baat yaad aa jaati hai, kabhi koi photo dekh kar smile aa jaati hai… aur kabhi bina kisi reason ke tum yaad aa jaati ho.
+Apkai saath judi hui chhoti-chhoti cheezein bhi mere liye important hain. Kabhi koi baat yaad aa jaati hai, kabhi koi photo dekh kar smile aa jaati hai… aur kabhi bina kisi reason ke aap yaad aa jaati ho.
 
-Shayad tumhe pata bhi nahi hai ki tum meri life ka kitna important part ban chuki ho.
+Shayad aapko pata bhi nahi hai ki aap meri life ka kitna important part ban chuki ho.
 
 Main har baar express nahi kar pata, aur shayad har baar sahi words bhi nahi milte… but I hope you always know that I care about you, genuinely.
 
-Aaj tumhara birthday hai, toh aaj bas tumhari smile dekhna chahta hoon.
-Tum khush raho, apne dreams poore karo, aur hamesha wohi rehna jo tum ho.
+Aaj apka birthday hai, toh aaj bas apkai face pai smile dekhna chahta hoon.
+Aap khush raho, apne dreams poore karo, aur hamesha wohi rehna jo aap ho.
 
 Aur meri taraf se ek simple sa thank you…
 
@@ -828,11 +827,11 @@ lekin jo bhi hai, main humari yaadon ko hamesha dil ke bahut kareeb rakhunga.
 Happy Birthday, my special one. ❤️
 
 Bas aaj ke din ek baar dil se smile karna…
-kyunki tumhari smile sach mein bahut achhi lagti hai. ❤️
+kyunki aapki smile sach mein bahut achhi lagti hai. ❤️
 
 — Yours, always
 
-Happy Birthday, beautiful. ❤️`;
+Happy Birthday, My Love. ❤️`;
 
 
 let letterIndex = 0;
@@ -1076,7 +1075,7 @@ if (letterContinueBtn) {
                             letter-spacing:1px;
                         "
                     >
-                        Happy Birthday, beautiful. ✨
+                        Happy Birthday, Mera Baccha. ✨
                     </p>
 
                 `;
@@ -1167,7 +1166,7 @@ if (letterContinueBtn) {
                                 letter-spacing:1px;
                             "
                         >
-                            Happy Birthday, beautiful. ✨
+                            Happy Birthday, My Special One. ✨
                         </p>
 
                     `;
